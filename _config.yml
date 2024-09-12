@@ -15,7 +15,7 @@ timezone: Asia/Ho_Chi_Minh
 # ↓ --------------------------
 
 title: Gn4rt.sk # the main title
-
+favicon: /assets/pic/img/favicons/avata_sukem.png
 tagline: Đây là blog học tập của Sukem # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
