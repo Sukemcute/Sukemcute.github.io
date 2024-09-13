@@ -19,7 +19,7 @@ favicon: /assets/pic/img/favicons/avata_sukem.png
 tagline: Đây là blog học tập của Sukem # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Gr4rt.sk, 1 blog học tập để Sukem lưu trữ lại những gì đã học.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -39,7 +39,7 @@ social:
     # https://twitter.com/username # change to your Twitter homepage
     - https://github.com/Sukemcute # change to your GitHub homepage
     # Uncomment below to add more social links
-    # - https://www.facebook.com/username
+    - https://www.facebook.com/lethuy.ttrang11/
     # - https://www.linkedin.com/in/username
 
 # Site Verification Settings
@@ -106,6 +106,7 @@ social_preview_image: # string, local or CORS resources
 toc: true
 
 comments:
+  active: 'giscus'  
   # Global switch for the post-comment system. Keeping it empty means disabled.
   provider: # [disqus | utterances | giscus]
   # The provider options are as follows:
@@ -117,9 +118,9 @@ comments:
     issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
+    repo: Sukemcute/Sukemcute.github.io
     repo_id:
-    category:
+    category: Comments
     category_id:
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
