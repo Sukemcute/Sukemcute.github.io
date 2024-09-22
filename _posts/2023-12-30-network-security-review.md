@@ -195,36 +195,99 @@ Một mô hình bảo mật cơ bản gồm 4 thành phần:
 - Physical
 - Policies, Procedures and Awareness
 
-## II. Malware
+## **II. Malware**
 
-### A. Trojan
+### **A. Trojan**
 
 ![](https://i.kym-cdn.com/entries/icons/original/000/026/726/trojan.jpg)
 
-#### 1. Khái niệm
+#### **1. Lịch sử hình thành**
 
 Cái tên Trojan được lấy ý tưởng từ Ngựa Trojan trong truyền thuyết Hy Lạp cổ đại thế kỷ 17 (cái này thi không hỏi đâu, một fun fact thôi). Phần mềm Trojan đầu tiên trên máy tính là **Back Orifice** với port xâm nhập là 31337.
 
-Trojan là chương trình gây hại, thường hoạt động bí mật và có công dụng phổ biến là **thiết lập quyền điều khiển từ xa** cho hacker trên máy bị nhiễm Trojan. Các đặc điểm khác của Trojan có thể xem thêm lại ở mục [I.B.9. Malicious Software](#9-malicious-software)
+#### **2. Khái niệm**
 
-Trojan có thể xâm nhập vào hệ thống qua rất nhiều con đường nhau như qua ứng dụng nhắn tin, file đính kèm trong email, phần mềm miễn phí trên mạng...
+- Trojan là chương trình gây hại, thường hoạt động bí mật và có công dụng phổ biến là **thiết lập quyền điều khiển từ xa** cho hacker trên máy bị nhiễm Trojan, ăn cắp thông tin của nạn nhân hoặc làm nhiệm vụ backdoor.
+- Trojan không tự nhân bản như virus máy tính mà chỉ chạy ngầm trong máy bị nhiễm khi người dùng chạy chương trình có đính kèm Trojan.
+- Thường làm chậm tốc độ máy tính, cấm chỉnh sửa registry...
+- Các con đường Trojan có thể xâm nhập vào hệ thống:
+    + Ứng dụng nhắn tin
+    + File đính kèm trong mail
+    + Phần mềm miễn phí trên mạng
+    + Truy cập vật lý
+    + Download tập tin, trò chơi, screensaver từ Internet...
 
-#### 2. Phân loại Trojan
+#### **3. Phân loại Trojan**
 
 Ta có các loại Trojan thường thấy như sau:
-- **RAT** - Remote Access Trojan: Biến máy tính bị nhiễm thành server để máy của hacker có thể truy cập vào và nắm quyền điều khiển. RAT tự động kích hoạt mỗi khi máy tính hoạt động và thường vô hiệu hóa việc chỉnh sửa registry nên khóa xóa Trojan này. Phổ biến có Back Orifice, Girlfriend, Netbus…
-- **Keyloggers**: Bao gồm 2 loại phần cứng và phần mềm, kích thước nhỏ gọn và sử dụng ít bộ nhớ nên khó phát hiện. Chúng có nhiệm vụ chủ yếu là ghi lại diễn biến của bàn phím rồi lưu lại trên máy hoặc gửi về cho hacker. Một keylogger thường gồm **3 thành phần** chính là **Chương trình điều khiển** để điều phối hoạt động và thiết lập, **Tập tin hook** để ghi nhận các thao tác bàn phím và **Tập tin nhật ký (log)** - Nơi chứa đựng toàn bộ những gì hook ghi nhận được.
+- **RAT** - Remote Access Trojan: 
+    + Biến máy tính bị nhiễm thành server để máy của hacker có thể truy cập vào và nắm quyền điều khiển. 
+    + RAT tự động kích hoạt mỗi khi máy tính hoạt động và thường vô hiệu hóa việc chỉnh sửa registry nên khó xóa Trojan này. Phổ biến có Back Orifice, Girlfriend, Netbus…
+    + **Cách phòng chống:**
+        - **Backup:** Duy trì các bản sao lưu được cập nhật của dữ liệu nhạy cảm và hình ảnh hệ thống, lý tưởng nhất là trên ổ cứng hoặc các thiết bị khác có thể ngắt kết nối khỏi mạng, có thể giúp phục hồi dễ dàng hơn sau các cuộc tấn công Malware.
+        - **Patch:** update, fix, hoặc vá các lỗ hổng trong phần mềm
+        - **Đào tạo nhận thức về bảo mật:** Nhiều trường hợp nhiễm phần mềm độc hại là do người dùng tải xuống phần mềm giả mạo hoặc bị lừa đảo qua mạng. Đào tạo nhận thức về bảo mật có thể giúp người dùng phát hiện các cuộc tấn công kỹ thuật xã hội, trang web độc hại và ứng dụng giả mạo. Đào tạo nhận thức về bảo mật cũng có thể hướng dẫn người dùng về những việc cần làm và liên hệ với ai nếu họ nghi ngờ có mối đe dọa phần mềm độc hại.
+        - **Sources:** Không download các phần mềm không rõ nguồn gốc, các phần mềm crack vì chúng có thể chứa các Trojan.
+        - **Endpoint detection and response (EDR):**  EDR giám sát các thiết bị điểm cuối, như điện thoại thông minh, máy tính xách tay và máy chủ, để tìm dấu hiệu hoạt động đáng ngờ và có thể tự động phản hồi phần mềm độc hại được phát hiện.
+        - **MFA (Multi-factor authentication):** Sử dụng xác thực đa yếu tố (Vd: Mã OTP trên đt).
+        - **Camera:** Tắt camera hoặc dán miếng băng dính để che cam lại để hacker không nhìn thấy được gì khi xâm nhập vào hệ thống camera.
+
+- **Keyloggers**: Bao gồm 2 loại phần cứng và phần mềm.
+    + Kích thước nhỏ gọn và sử dụng ít bộ nhớ nên khó phát hiện. 
+    + Hoạt động đơn giản, chủ yếu là ghi lại diễn biến của bàn phím rồi lưu lại trên máy hoặc gửi về cho hacker qua mail. 
+    + Nếu dùng để giám sát con cái, người thân xem
+    họ làm gì với PC, với internet, khi chat với người
+    lạ thì keylogger là **tốt**.
+    + Khi sử dụng keylogger nhằm đánh cắp các
+    thông tin cá nhân (tài khoản cá nhân, mật khẩu,
+    thẻ tín dụng) thì keylogger là **xấu**. 
+    + Một keylogger thường gồm **3 thành phần** chính là:
+        - **Chương trình điều khiển** để điều phối hoạt động, tinh chỉnh các thiết lập, xem các tập tin nhật ký. Chỉ có thể gọi bằng tổ hợp phím tắt. 
+        - **Tập tin hook** để ghi nhận các thao tác bàn phím, capture screen. 
+        - **Tập tin nhật ký (log)** - Nơi chứa đựng toàn bộ những gì hook ghi nhận được.
+![Keylogger](https://vietwebgroup.vn/uploads/hoi-dap/keylogger-la-gi-tim-hieu-ve-keylogger-la-gi1.jpg)
+_Hình ảnh Keylogger_
+    + **Cách phòng chống:**
+        - **Đổi trật tự gõ bàn phím:** Nếu người dùng muốn đăng nhập tài khoản mạng xã hội, ngân hàng trên máy thì người dùng nên gõ password sai hoặc thừa dấu rồi xóa bớt đi những ký tự sai để keylogger không thể nhận diện được mật khẩu đúng.
+        - **Sao chép chuỗi kí tự:** Lưu password trên Notepad++, word, docs để khi mở tài khoản, bạn chỉ cần việc copy + pass vào password để đăng nhập, tránh phát hiện. Không truy cập vào website và link lạ, đặc biệt là web đen vì thường các web này đều chứa worm, virus và mã độc.
+        - **Sử dụng phần mềm diệt virus:** Luôn mở hoạt động các chương trình bảo vệ chống virus, spywar. Các phần mềm diệt virus mạnh sẽ ngăn chặn được cả chương trình keylogger. Cài đặt thêm tường lửa trong trình duyệt để giúp keylogger không thể xâm nhập trên máy tính của mình. Cập nhật hệ điều hành thường xuyên để vá các lỗ hổng.
+        - **Sử dụng bàn phím ảo:** Sử dụng bàn phím ảo trên màn hình. Khi người dùng sử dụng bàn phím ảo, bạn sẽ không cần dùng phím thật trên máy tính nên keylogger sẽ không sao chép được các thông tin khi bạn sử dụng máy tính.
+
 - **Trojan lấy cắp password**: Đúng như tên gọi, chúng ăn cắp các mật khẩu lưu trên hệ thống rồi gửi về cho hacker. Các loại phổ biến là Barri, Kuang, Barok.
+    + Ăn cắp các loại mật khẩu lưu trên máy bị nhiễm như mật khẩu của ICQ, IRC, Hotmial, Yahoo,... rồi gửi về cho hacker qua mail.
+
 - **FTP Trojan**: Loại này mở cổng **21** trên máy bị nhiễm nên mọi người đều có thể truy cập máy này để tải dữ liệu.
+
 - **Trojan phá hoại**: Có khả năng phá hủy đĩa cứng, mã hoá các file. Rất nguy hiểm và khó kiểm soát.
+
 - **Trojan chiếm quyền kiểu leo thang**: Thường được gắn vào một ứng dụng hệ thống nào đó và sẽ cho hacker quyền cao hơn quyền đã có trong hệ thống khi ứng dụng này chạy.
 
 #### 3. Một số Trojan phổ biến
 
 - Loại Keyloggers
-    - KGB Spy.
-    - Blazing Tool Perfect Keylogger
-    - Stealth Keylogger
+    - **KGB Spy:** Là loại Trojan mạnh, được sử dụng rộng rãi. Version được cập nhật liên tục.
+        + Có thể theo dõi các phím nhấn, màn hình,...
+        + Có các tab trong chương trình: 
+            - General options 
+            - Advanced options
+            - Password 
+            - Screenshot
+            - Email Delivery 
+            - FPT Delivery
+            - Filters 
+            - Alert Notifications
+            - Invisibility
+    - **Blazing Tool Perfect Keylogger:**
+        + Là một trojan mạnh, được sử dụng rộng
+        rãi trên internet.
+        + Cho phép nhận thông tin từ máy bị nhiễm
+        trojan từ email hoặc fpt server.
+        + Có thể lưu lại các phím nhấn, các link
+        web, nội dung chat…
+    - **007 Spy Software:** Nó có thể qua mặt được nhiều loại AntiVirus v à AntiTrojan . Phần mềm này là một phần mềm "hợp pháp" nên các chương trình Anti không được phép loại bỏ nó . Nó có thể được setup vào trong bất kỳ một folder nào của Window và sống rất an toàn . Khi setup các chương trình Anti thường đưa ra câu hỏi , ta chỉ việc OK là nó cho con Spy này hoạt động .
+    - **Stealth Keylogger:** dùng cho những "hacker" hoặc có thể những chủ nhân của những chiếc PC muốn biết có ai đó đã làm gì trên chiếc PC của mình.
+        + có thể ghi lại tất cả các hoạt động trên bàn phím (hoặc động trên bàn phím được lưu lại dưới dạng notepad), và chụp lại hình ảnh của màn hình, có thể 1 giây chụp một cái hoặc có thể nhiều giây chụp một cái do chúng ta tự thiết đặt. Có thể thiết đặt đường dẫn để lưu hình ảnh, các hoạt động bàn phím qua yahoo hoặc qua đường dẫn mà bạn chọn.
+    
 - Loại RAT
     - DJI RAT
     - HackerzRAT
@@ -556,7 +619,7 @@ Cuối cùng ta có được chuỗi mật mã sau: c = DPVVW.
 * Khóa vẫn sẽ là hoán vị của bảng chữ cái nên khi này có $26^n$ kiểu khác nhau, với n là số ký tự trong 1 cụm.
 * Khóa sẽ được biểu diễn dưới dạng bảng với các hàng biểu diễn ký hiệu đầu tiên, các cột biểu diễn ký hiệu thứ hai.
 
-#### 3. Mã hoán vị bậc d (Permutation Cypher)
+#### 3. Mã hoán vị bậc d (Permutation Cypher) (thi luôn có)
 * Chia thông điệp **m** ra thành từng khối có chiều dài là **d**. Sau đó hoán vị lần lượt từng khối để tạo ra chuỗi mật mã **c**.
 
 * Ví dụ:
@@ -564,7 +627,7 @@ Cuối cùng ta có được chuỗi mật mã sau: c = DPVVW.
 Ta có m: Cryptool1 và d = 3. Mỗi block ta sẽ hoán vị theo cách thức 1,2,3 -> 3,1,2
 Qua phép mã hóa hoán vị bậc d, ta được chuỗi mật mã c: yCropt1ol.
 
-#### 4. Mã dịch chuyển (Shift Cypher)
+#### 4. Mã dịch chuyển (Shift Cypher) (thi luôn có)
 
 ##### Giải thuật Vigenère
 
@@ -618,9 +681,9 @@ Việc mã hóa được thực hiện dưới dạng sau:
 
 **e(x) = ax + b (mod 26)** với a là số nguyên tố từ 1-26, b là số bước nhảy cũng có giá trị từ 1-26.
 
-#### 7. Mã Playfair
+#### 7. Mã Playfair (thi, hỏi công thức,...)
 
-* Giải thuật sẽ sử dụng 1 ma trận khóa dạng 5x5 hoặc 6x6.
+* Giải thuật sẽ sử dụng 1 ma trận khóa dạng 5x5 (khóa toàn chữ) hoặc 6x6 (Nếu có thêm số).
 * Ma trận đầu tiên sẽ được thêm vào các ký tự của khóa.
 * Nếu ma trận chưa đầy thì sẽ được bổ sung bằng các ký tự từ A->Z. Trong đó I và J được coi là 1 ký tự.
 * Khi bổ sung các ký tự cho ma trận thì không được thêm các ký tự đã có trước đấy.
@@ -643,7 +706,7 @@ Việc mã hóa được thực hiện dưới dạng sau:
    _**Hai kí tự tạo thành hình chữ nhật**_
 
 
-#### 8. Mã Hill
+#### 8. Mã Hill (thi hỏi công thức, cách tính)
 
 * Các ký tự được gán giá trị lần lượt là A = 01, B = 02, …, Z = 26.
 * Chọn ma trận vuông Hill (ma trận H) làm khoá. Kích cỡ của ma trận tùy vào số lượng ký tự trong plaintext được mã hóa cùng lúc.
