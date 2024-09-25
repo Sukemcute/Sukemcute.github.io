@@ -176,6 +176,7 @@ Dựa trên cuộc thảo luận trước, $$ \frac{∂C}{∂a} $$ có thể tru
 
 
 
+
 ## Giải thích từ chuyên môn
 ### 1. ViT (Vision Transformer): Máy biến đổi tầm nhìn
 [https://fineproxy.org/vi/wiki/vit-vision-transformer/](https://fineproxy.org/vi/wiki/vit-vision-transformer/)
